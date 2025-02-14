@@ -6,9 +6,11 @@ install below packages by running below command in project folder:
 
 
 activate the environment path or use whole app.py path while running:
+    
     source env/bin/activate
 
 
 to run project:
+    
     python app.py
 
