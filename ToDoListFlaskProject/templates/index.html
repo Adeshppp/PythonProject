@@ -29,9 +29,12 @@
                         <td>{{task.content}}</td>
                         <td>{{task.date_created}}</td>
                         <td>
+                            <div class="action-buttons">
+
                             <a href="/complete/{{task.id}}">Completed</a>
-                            <br>
+                           
                             <a href="/update/{{task.id}}">Update</a>
+                        </div>
                         </td>
                     </tr>
                 {% endif %}
@@ -52,11 +55,14 @@
                         <td>{{task.date_created}}</td>
                         <td>{{task.date_completed}}</td>
                         <td>
+                            <div class="action-buttons">
+                                <a href="/review/{{task.id}}">Review</a>
                             <a href="/deletePermanent/{{task.id}}">Delete</a>
-                            <br>
-                            <a href="/update/{{task.id}}">Update</a>
-                            <br>
-                            <a href="/review/{{task.id}}">Review</a>
+                            
+                            
+                            
+                            
+                        </div>
                         </td>
                     </tr>
                 {% endif %}
