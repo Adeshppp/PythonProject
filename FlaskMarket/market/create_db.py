@@ -1,4 +1,5 @@
-from market import app, db, Item
+from market import app, db
+from market.models import Item
 
 # List of items from market.py
 items_data = [
