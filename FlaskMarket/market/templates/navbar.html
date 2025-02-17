@@ -1,4 +1,5 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
     <div class="container-fluid">
         <a class="navbar-brand" href="/">Flask Market</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown"
@@ -34,7 +35,7 @@
             </ul>
             <ul class="navbar-nav ms-auto">
                 <li class="nav-item"><a class="nav-link" href="#">Login</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Register</a></li>
+                <li class="nav-item"><a class="nav-link" href="{{url_for('register_page')}}">Register</a></li>
 <!--                <li class="nav-item"><a class="nav-link btn btn-primary text-white" href="#">Register</a></li>-->
             </ul>
         </div>

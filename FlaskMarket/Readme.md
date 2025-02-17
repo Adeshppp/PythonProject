@@ -1,3 +1,12 @@
+Install below packages:
+
+    pip install flask
+    pip install flask-sqlalchemy
+    pip install flask-wtf
+    pip install wtforms
+    pip install email_validator
+
+
 
 set application to run by using flask:
 
