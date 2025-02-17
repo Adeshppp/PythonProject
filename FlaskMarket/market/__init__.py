@@ -4,6 +4,7 @@ from enum import unique
 from flask_sqlalchemy import SQLAlchemy
 from flask import Flask
 from flask_bcrypt import Bcrypt
+from flask_login import LoginManager
 
 app = Flask(__name__)
 
@@ -13,5 +14,6 @@ db = SQLAlchemy(app)
 app.config['SECRET_KEY'] = 'da43186e7ea7c81f373b635f'
 # app.config['SECRET_KEY'] = os.urandom(12).hex()
 bcrypt = Bcrypt(app)
+login_manager = LoginManager(app)
 from market import routes
 # from market import create_db
