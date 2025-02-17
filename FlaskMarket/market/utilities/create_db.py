@@ -21,6 +21,7 @@ with app.app_context():
     db.create_all()  # Create all tables in the database
     print("Database created successfully!")
 
+
     # Add items to the database
     for item_data in items_data:
         item = Item(
@@ -32,16 +33,17 @@ with app.app_context():
         )
         db.session.add(item)  # Add item to the session
 
-    # Add users to the database (with password hashing)
-    for user_data in users_data:
-        # hashed_password = generate_password_hash(user_data["password"], method='sha256')  # Hash the password securely
-        hashed_password = user_data["password"]
-        user = User(
-            username=user_data["username"],
-            email_address=user_data["email_address"],
-            password_hash=hashed_password
-        )
-        db.session.add(user)  # Add user to the session
+    if not users_data:
+        # Add users to the database (with password hashing)
+        for user_data in users_data:
+            # hashed_password = generate_password_hash(user_data["password"], method='sha256')  # Hash the password securely
+            hashed_password = user_data["password"]
+            user = User(
+                username=user_data["username"],
+                email_address=user_data["email_address"],
+                password_hash=hashed_password
+            )
+            db.session.add(user)  # Add user to the session
 
     db.session.commit()  # Commit the session to save all items and users
 

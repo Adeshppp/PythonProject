@@ -3,7 +3,7 @@ from email.policy import default
 from sqlalchemy.orm import backref
 
 from market import db
-
+from market import bcrypt
 
 class Item(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -25,6 +25,13 @@ class User(db.Model):
     email_address = db.Column(db.String(50), unique=True, nullable=False)
     password_hash = db.Column(db.String(60), nullable=False)
     # items = db.relationship('Item', backref='owned_user', lazy=True)
+    @property
+    def password(self):
+        return self.password
+
+    @password.setter
+    def password(self, plain_text_password):
+        self.password_hash = bcrypt.generate_password_hash(plain_text_password).decode('utf-8')
 
 class UserItems(db.Model):
     id = db.Column(db.Integer, primary_key=True)

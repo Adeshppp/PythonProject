@@ -5,6 +5,7 @@ Install below packages:
     pip install flask-wtf
     pip install wtforms
     pip install email_validator
+    pip install flask_bcrypt
 
 
 
